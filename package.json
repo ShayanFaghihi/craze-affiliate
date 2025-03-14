@@ -1,19 +1,19 @@
 {
-  "name": "coin-hero-affiliates",
+  "name": "craze-affiliates",
   "version": "1.0.0",
-  "description": "Coin Hero Affiliate Website",
+  "description": "Craze Affiliate Website",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShayanFaghihi/coin-hero-affiliate.git"
+    "url": "git+https://github.com/ShayanFaghihi/craze-affiliate.git"
   },
   "author": "Shayan Faghihi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ShayanFaghihi/coin-hero-affiliate/issues"
+    "url": "https://github.com/ShayanFaghihi/craze-affiliate/issues"
   },
-  "homepage": "https://github.com/ShayanFaghihi/coin-hero-affiliate#readme"
+  "homepage": "https://github.com/ShayanFaghihi/craze-affiliate#readme"
 }

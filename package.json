@@ -1,0 +1,19 @@
+{
+  "name": "coin-hero-affiliates",
+  "version": "1.0.0",
+  "description": "Coin Hero Affiliate Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShayanFaghihi/coin-hero-affiliate.git"
+  },
+  "author": "Shayan Faghihi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShayanFaghihi/coin-hero-affiliate/issues"
+  },
+  "homepage": "https://github.com/ShayanFaghihi/coin-hero-affiliate#readme"
+}

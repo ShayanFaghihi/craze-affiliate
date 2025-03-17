@@ -15,8 +15,6 @@
   --fs-body-100: 10px;
   --fs-link: 12px;
 
-  --clr-blue-700: #112152;
-  --clr-blue-400: #233a7d;
   --clr-blue-100: #4eeaff;
   --clr-red: #f20166;
   --clr-white: #fff;
@@ -64,7 +62,7 @@ body {
   font-size: var(--fs-body);
   font-style: normal;
   line-height: 1.5;
-  background-color: var(--clr-blue-400);
+  background-color: #252729;
   color: var(--clr-white);
 }
 
@@ -599,7 +597,7 @@ header .desktop-header nav .cta-section .btn {
   border-radius: 5px;
   font-family: inherit;
   font-size: var(--fs-body);
-  color: var(--clr-blue-700);
+  color: #1a1b1b;
 }
 
 .contact-section .contact-section__form form button {
@@ -677,80 +675,4 @@ footer .footer-right .social-icons ul img:hover {
     flex-direction: row;
     align-items: flex-start;
   }
-}
-
-/* ************************************************** */
-/* ******************** Terms Page ****************** */
-/* ************************************************** */
-.terms-section {
-  padding-block: var(--section-padding);
-}
-.terms-section .container {
-  width: min(80%, 1000px);
-}
-.terms-section h1 {
-  font-size: 16px;
-}
-
-.terms-section h2 {
-  font-size: var(--fs-heading-400);
-  margin-top: 1rem;
-}
-
-.terms-section h3 {
-  margin-bottom: 10px;
-  margin-top: 1rem;
-  font-size: var(--fs-body-100);
-}
-
-.terms-section ul {
-  list-style-type: none;
-  margin-block: 0 1em;
-}
-
-.terms-section p,
-.terms-section ul li {
-  font-size: var(--fs-body-100);
-  margin-bottom: 10px;
-}
-
-.terms-section p + p {
-  margin-top: 1rem;
-}
-
-.terms-section ul li {
-  margin-left: 1.5em;
-}
-
-/* Table */
-.terms-section table {
-  margin-top: 1rem;
-}
-.terms-section table,
-.terms-section table th,
-.terms-section table td {
-  border: 1px dashed #fff;
-  border-collapse: collapse;
-  padding: 10px;
-}
-
-.terms-section table tr:first-of-type {
-  background-color: var(--clr-blue-700);
-}
-
-.terms-section table th,
-.terms-section table tr td:first-of-type {
-  text-align: center;
-}
-
-/* Signup Page */
-.signup-section {
-  margin-block: 10rem;
-}
-.signup-section iframe {
-  height: 100vh;
-}
-
-.signup-section iframe #submitbtn {
-  background-color: var(--clr-red) !important;
 }

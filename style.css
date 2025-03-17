@@ -495,7 +495,7 @@ header .desktop-header nav .cta-section .btn {
 /* ******************** Benefits Section ****************** */
 /* ******************************************************** */
 .benefits-section {
-  background-color: var(--clr-blue-700);
+  background-color: #252729;
   padding-block: 6rem;
 }
 

@@ -18,6 +18,7 @@
   --clr-blue-100: #4eeaff;
   --clr-red: #f20166;
   --clr-white: #fff;
+  --clr-green: #00e2cb;
 
   --clr-blue-hover: #27427e;
 
@@ -54,6 +55,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -64,6 +66,7 @@ body {
   line-height: 1.5;
   background-color: #252729;
   color: var(--clr-white);
+  overflow-x: hidden;
 }
 
 h1,
@@ -81,7 +84,7 @@ h3 {
   font-size: var(--fs-heading-400);
   font-weight: 700;
   line-height: 1.5;
-  color: var(--clr-white);
+  color: var(--clr-green);
 }
 
 a,
@@ -171,30 +174,50 @@ main section {
 .section__text {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
   padding: 1rem;
-  padding-block: 4rem;
+}
+
+/* Section */
+.section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section .section__image {
+  text-align: center;
+
+  img {
+    width: 100%;
+  }
 }
 
 @media (width > 740px) {
   .section {
-    min-height: 60vh;
     background-size: contain;
-  }
-  .section .section__text {
-    width: min(50%, 500px);
-    background-color: transparent;
-    padding: 0;
+    padding-block: 4rem;
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .section__text {
+      width: min(50%, 500px);
+      background-color: transparent;
+      padding: 0;
+    }
+
+    .section__image {
+      width: 50%;
+    }
   }
 }
 
-@media (width > 1030px) {
-  .section {
-    min-height: 70vh;
-  }
-}
 /* ***************************************************** */
 /* ******************** Header Section ****************** */
 /* ***************************************************** */
@@ -375,21 +398,35 @@ header .desktop-header nav .cta-section .btn {
 .hero-section .container {
   z-index: 1;
   position: relative;
+
+  .section__text {
+    order: 2;
+  }
+
+  .section__image {
+    order: 1;
+  }
 }
 
-.smiley-container {
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-}
-
-.smiley {
-  width: 60%;
-  max-width: 400px;
+.hero-section .section__image .smiley {
+  width: 70vw;
+  max-width: 300px;
   height: auto;
   animation: neonGlow 1.5s infinite alternate ease-in-out;
+}
+
+@media (width > 740px) {
+  .hero-section {
+    min-height: 80vh;
+    .container {
+      .section__text {
+        order: 1;
+      }
+      .section__image {
+        order: 2;
+      }
+    }
+  }
 }
 
 @keyframes neonGlow {
@@ -402,46 +439,37 @@ header .desktop-header nav .cta-section .btn {
       drop-shadow(0 0 25px rgba(0, 174, 255, 1));
   }
 }
-@media (width > 740px) {
-  .hero-section .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .smiley-container {
-    position: relative;
-    transform: translateY(0);
-
-    .smiley {
-      width: 100%;
-    }
-  }
-}
 
 /* *********************************************************** */
 /* ******************** Commissions Section ****************** */
 /* *********************************************************** */
 .commissions-section {
   background-color: #252729;
-  background-image: url("/assets/Arrows\ group.png");
-  background-size: cover;
-  background-position: center;
+  position: relative;
 }
 
 .commissions-section .container {
   z-index: 1;
 }
 
-.commissions-section .section__img img {
+.commissions-section .section__image {
+  margin-bottom: calc(-1 * var(--section-padding));
+  margin-left: -10%;
+  vertical-align: bottom;
   width: 100%;
-  max-width: 400px;
+  text-align: left;
+  img {
+    width: 100%;
+  }
 }
 
 .commissions-section__text--icons {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin-top: 1rem;
   max-width: 400px;
+  gap: 2rem;
 }
 
 .commissions-section__text--icons .option {
@@ -450,21 +478,25 @@ header .desktop-header nav .cta-section .btn {
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
-}
 
-.commissions-section__text--icons .option img {
-  width: 13vmin;
-  max-width: 60px;
+  img {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 @media (width > 740px) {
-  .commissions-section {
-    background-position: bottom left;
-    background-size: contain;
-  }
   .commissions-section .container {
-    display: flex;
-    justify-content: flex-end;
+    flex-direction: row-reverse;
+    .section__text {
+      width: 50%;
+    }
+    .section__image {
+      width: 50%;
+    }
+  }
+  .commissions-section__text--icons {
+    flex-direction: row;
   }
 }
 
@@ -472,16 +504,14 @@ header .desktop-header nav .cta-section .btn {
 /* ******************** Brand Section ****************** */
 /* ***************************************************** */
 .brand-section {
-  background-image: url("/assets/smiley\ group.png");
-  background-position: center;
-  background-size: 100%;
   background-color: #1a1b1b;
-}
-
-@media (width>740px) {
-  .brand-section {
-    background-size: contain;
-    background-position: right;
+  .section__image {
+    margin-bottom: calc(-1 * var(--section-padding));
+    margin-right: -10%;
+    vertical-align: bottom;
+    img {
+      vertical-align: bottom;
+    }
   }
 }
 
@@ -489,12 +519,22 @@ header .desktop-header nav .cta-section .btn {
   margin-top: 1em;
 }
 
+@media (width >740px) {
+  .brand-section .container {
+    .section__image {
+      img {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
 /* ******************************************************** */
 /* ******************** Benefits Section ****************** */
 /* ******************************************************** */
 .benefits-section {
   background-color: #252729;
-  padding-block: 6rem;
 }
 
 .benefits-section h2 {
@@ -520,7 +560,7 @@ header .desktop-header nav .cta-section .btn {
   width: 60px;
   height: 60px;
   object-fit: contain;
-  margin-block: 1rem;
+  margin-block: 10px;
 }
 
 @media (width > 980px) {
@@ -539,7 +579,6 @@ header .desktop-header nav .cta-section .btn {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding-block: 4rem;
 }
 
 .contact-section h2 {

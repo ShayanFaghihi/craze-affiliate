@@ -119,7 +119,7 @@ main section {
   cursor: pointer;
   border: none;
   outline: none;
-  border-radius: 40px;
+  border-radius: 10px;
   padding: 10px 2em;
   color: var(--clr-white);
   text-align: center;
@@ -145,13 +145,21 @@ main section {
 }
 
 .btn.btn-blue {
-  background-color: var(--clr-blue-100);
-  color: var(--clr-white);
+  background: linear-gradient(
+    to bottom,
+    rgb(1, 228, 205) 0%,
+    rgb(138, 255, 235) 100%
+  );
+  color: #252729;
+  transition: background 0.5s ease-in-out;
 }
 
 .btn.btn-blue:hover {
-  background-color: var(--clr-blue-hover);
-  color: var(--clr-white);
+  background: linear-gradient(
+    to top,
+    rgb(1, 228, 205) 0%,
+    rgb(138, 255, 235) 100%
+  );
 }
 
 /* ********************************************************* */
@@ -246,6 +254,10 @@ header .cta-section {
   display: flex;
   gap: 1rem;
   flex-direction: column;
+}
+
+header ul li a {
+  text-transform: uppercase;
 }
 
 /* Mobile View */

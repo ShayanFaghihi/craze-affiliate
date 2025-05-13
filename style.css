@@ -19,6 +19,8 @@
   --clr-red: #f20166;
   --clr-white: #fff;
   --clr-green: #00e2cb;
+  --clr-black-bg: #252729;
+  --clr-black-dark-bg: #1a1b1b;
 
   --clr-blue-hover: #27427e;
 
@@ -174,6 +176,10 @@ main section {
   position: relative;
 }
 
+.section:nth-of-type(odd) {
+  background-color: var(--clr-black-dark-bg);
+}
+
 /* Text Styles */
 .section__text {
   display: flex;
@@ -234,7 +240,7 @@ a.anchor {
 }
 
 header {
-  background-color: #252729;
+  background-color: var(--clr-black-bg);
   width: 100%;
   height: 80px;
   padding-block: 1rem;
@@ -257,7 +263,6 @@ header ul li a {
 }
 
 /* Mobile View */
-
 header .mobile-header {
   display: flex;
   justify-content: space-between;
@@ -346,14 +351,10 @@ header .desktop-header {
   display: none;
 }
 
-header .desktop-header .desktop-header__logo {
-  width: 20%;
-}
 
 header .desktop-header nav {
   display: flex;
   justify-content: space-between;
-  width: 80%;
 }
 
 header .desktop-header .desktop-header__logo img {
@@ -363,10 +364,11 @@ header .desktop-header .desktop-header__logo img {
 header .desktop-header nav ul {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 header .desktop-header nav .cta-section {
+  margin-left: 1rem;
   display: flex;
   flex-direction: row;
 }
@@ -400,10 +402,6 @@ header .desktop-header nav .cta-section .btn {
 /* ***************************************************** */
 /* ******************** Hero Section ****************** */
 /* ***************************************************** */
-.hero-section {
-  background-color: #1a1b1b;
-}
-
 .hero-section .container {
   z-index: 1;
   position: relative;
@@ -450,10 +448,50 @@ header .desktop-header nav .cta-section .btn {
 }
 
 /* *********************************************************** */
+/* ******************** Affiliates Section ****************** */
+/* *********************************************************** */
+.affiliates-section .container {
+ flex-direction: column-reverse;
+
+ .section__image img {
+  max-width: 300px;
+ }
+}
+
+@media (width > 740px) {
+  .affiliates-section .container {
+    flex-direction: row-reverse;
+
+    .section__image img {
+      max-width: 500px;
+    }
+  }
+
+}
+
+/* *********************************************************** */
+/* ******************** Streamers Section ****************** */
+/* *********************************************************** */
+@media (width < 740px) {
+  .streamers-section .container {
+    flex-direction: column-reverse;
+  
+    .section__image img {
+      max-width: 300px;
+    }
+  }
+}
+
+@media (width > 768px) {
+  .streamers-section .section__image img {
+    max-width: 500px;
+  }
+}
+
+/* *********************************************************** */
 /* ******************** Commissions Section ****************** */
 /* *********************************************************** */
 .commissions-section {
-  background-color: #252729;
   position: relative;
 }
 
@@ -474,7 +512,6 @@ header .desktop-header nav .cta-section .btn {
 
 .commissions-section__text--icons {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   margin-top: 1rem;
   max-width: 400px;
@@ -504,16 +541,12 @@ header .desktop-header nav .cta-section .btn {
       width: 50%;
     }
   }
-  .commissions-section__text--icons {
-    flex-direction: row;
-  }
 }
 
 /* ***************************************************** */
 /* ******************** Brand Section ****************** */
 /* ***************************************************** */
 .brand-section {
-  background-color: #1a1b1b;
   .section__image {
     margin-bottom: calc(-1 * var(--section-padding));
     margin-right: -10%;
@@ -542,8 +575,8 @@ header .desktop-header nav .cta-section .btn {
 /* ******************************************************** */
 /* ******************** Benefits Section ****************** */
 /* ******************************************************** */
-.benefits-section {
-  background-color: #252729;
+.benefits-section .container {
+  flex-direction: column;
 }
 
 .benefits-section h2 {
@@ -581,8 +614,7 @@ header .desktop-header nav .cta-section .btn {
 /* ******************************************************** */
 /* ******************** Contact Section ****************** */
 /* ******************************************************** */
-.contact-section {
-  background-color: #1a1b1b;
+.contact-section .container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

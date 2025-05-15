@@ -424,7 +424,7 @@ header .desktop-header nav .cta-section .btn {
 
 @media (width > 740px) {
   .hero-section {
-    min-height: 80vh;
+    min-height: 70vh;
     .container {
       .section__text {
         order: 1;
@@ -434,6 +434,10 @@ header .desktop-header nav .cta-section .btn {
       }
     }
   }
+}
+
+@media (width > 2000px) {
+  .hero-section {min-height: 40vh;}
 }
 
 @keyframes neonGlow {

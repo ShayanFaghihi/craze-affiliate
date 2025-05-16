@@ -259,7 +259,7 @@ header .cta-section {
 }
 
 header ul li a {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 /* Mobile View */

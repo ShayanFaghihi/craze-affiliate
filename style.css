@@ -95,7 +95,7 @@ a:focus {
   text-decoration: none;
   font-size: var(--fs-link);
   color: var(--clr-white);
-  font-weight: 700;
+  font-weight: bold;
 }
 
 ul {
@@ -125,7 +125,7 @@ main section {
   padding: 10px 2em;
   color: var(--clr-white);
   text-align: center;
-  text-transform: uppercase;
+  text-transform: capitalize;
   transition: all 0.2s ease-in;
 }
 
@@ -351,10 +351,10 @@ header .desktop-header {
   display: none;
 }
 
-
 header .desktop-header nav {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 header .desktop-header .desktop-header__logo img {
@@ -365,6 +365,11 @@ header .desktop-header nav ul {
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  & li a {
+    font-size: 14px;
+    font-weight: 400;
+  }
 }
 
 header .desktop-header nav .cta-section {
@@ -379,7 +384,8 @@ header .desktop-header nav .cta-section .btn {
 @media (width > 1138px) {
   header .desktop-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 2rem;
     align-items: center;
   }
 
@@ -437,7 +443,9 @@ header .desktop-header nav .cta-section .btn {
 }
 
 @media (width > 2000px) {
-  .hero-section {min-height: 40vh;}
+  .hero-section {
+    min-height: 40vh;
+  }
 }
 
 @keyframes neonGlow {
@@ -455,11 +463,11 @@ header .desktop-header nav .cta-section .btn {
 /* ******************** Affiliates Section ****************** */
 /* *********************************************************** */
 .affiliates-section .container {
- flex-direction: column-reverse;
+  flex-direction: column-reverse;
 
- .section__image img {
-  max-width: 300px;
- }
+  .section__image img {
+    max-width: 300px;
+  }
 }
 
 @media (width > 740px) {
@@ -470,7 +478,6 @@ header .desktop-header nav .cta-section .btn {
       max-width: 500px;
     }
   }
-
 }
 
 /* *********************************************************** */
@@ -479,7 +486,7 @@ header .desktop-header nav .cta-section .btn {
 @media (width < 740px) {
   .streamers-section .container {
     flex-direction: column-reverse;
-  
+
     .section__image img {
       max-width: 300px;
     }
@@ -592,7 +599,7 @@ header .desktop-header nav .cta-section .btn {
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: center;
-  gap: 2rem;
+  gap: 3rem;
 }
 .benefits-section .benefits-section__icons .option {
   max-width: 220px;
@@ -700,7 +707,8 @@ header .desktop-header nav .cta-section .btn {
     gap: 1rem;
   }
   .contact-section .contact-section__form form .horizontal-group .form-group {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
   }
 }
 
